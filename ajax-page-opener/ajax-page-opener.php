@@ -2,7 +2,7 @@
     /*
     Plugin Name: Ajax page opener
     Plugin URI: http://bitlabs.nl
-    Version 1.0
+    Version 1.0.1
     Author: Bitlabs - Dirk Groenen
     Description: Opens wordpress pages or posts using ajax
     */
@@ -14,7 +14,7 @@
         add_action( 'wp_ajax_nopriv_getpage', array($this, 'getpage') );
 
         add_action( 'wp_enqueue_scripts', array($this, 'ajaxfunctions') );
-        add_action( 'wp_enqueue_scripts', array($this, 'addglobalvars') );
+        add_action( 'wp_head', array($this, 'addglobalvars') );
     }
 
     public function getpage() {
